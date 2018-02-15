@@ -4,18 +4,8 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo "1: $1 2: $2 3:$3"
-
-echo "\n\n\n=========================== START BUNDLE CLEAN ========================="
-
-cd $BUILD_DIR && \
-  bundle clean --force
-
-if [ ! -f /app/vendor/bundle/bin/heroku ]; then
-  echo "File not found!"
-  rm /app/vendor/bundle/bin/heroku
-fi
-
-echo "============================= END BUNDLE CLEAN =========================\n\n\n"
+echo "\n\n\n=========================== START PATH HACK ========================="
+PATH=/app/heroku-cli/bin:$PATH
+echo "============================= END PATH HACK =========================\n\n\n"
 
 exit 0
