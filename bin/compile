@@ -5,7 +5,10 @@ CACHE_DIR=$2
 ENV_DIR=$3
 
 echo "=========================== START PATH HACK ========================="
-export PATH=/app/heroku-cli/bin:$PATH
+
+mkdir -p $BUILD_DIR/.profile.d
+echo 'PATH=/app/heroku-cli/bin:$PATH' > $BUILD_DIR/.profile.d/heroku-cli-hack.sh
+
 echo "===========================  END PATH HACK  ========================="
 
 exit 0
