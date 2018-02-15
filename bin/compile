@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "\n\n\n=========================== START BUNDLE CLEAN ========================="
 bundle clean --force
+echo "============================= END BUNDLE CLEAN =========================\n\n\n"
 
 exit 0
